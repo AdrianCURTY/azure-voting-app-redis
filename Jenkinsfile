@@ -36,8 +36,8 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            bat script: "python --version"
-            bat script: "pytest tests/test_sample.py"
+            bat script: 'Powershell.exe -Command "pytest tests/test_sample.py"'
+          //  bat script: "pytest tests/test_sample.py"
          }
       }
       stage('Stop test app') {
