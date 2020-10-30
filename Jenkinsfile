@@ -8,8 +8,8 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            powershell script: 'docker images -a'
-            powershell script: """
+            bat script: 'docker images -a'
+            bat script: """
                cd azure-vote/
                docker images -a
                docker build -t jenkins-pipeline .
