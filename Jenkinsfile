@@ -36,7 +36,7 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            bat script: "pip install -U pytest"
+            bat script: "python --version"
             bat script: "pytest tests/test_sample.py"
          }
       }
