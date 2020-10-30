@@ -36,9 +36,10 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            bat script: """
-               pytest ./tests/test_sample.py
-            """
+            bat script: "pytest tests/test_sample.py"
+            bat script: "pytest.exe tests/test_sample.py"
+            bat script: "py.test tests/test_sample.py"
+            bat script: "py.test.exe tests/test_sample.py"
          }
       }
       stage('Stop test app') {
