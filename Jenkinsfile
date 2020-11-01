@@ -38,7 +38,10 @@ pipeline {
          steps {
             bat 'echo %PATH%'
             bat 'dir'
-            bat 'pytest tests'
+            bat """
+            cd tests
+            pytest
+            """
           //  bat script: "pytest teststest_sample.py"
          }
       }
