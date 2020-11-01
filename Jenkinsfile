@@ -37,8 +37,9 @@ pipeline {
       stage('Run Tests') {
          steps {
             bat 'echo %PATH%'
-            bat 'pytest tests/test_sample.py'
-          //  bat script: "pytest tests/test_sample.py"
+            bat 'dir'
+            bat 'pytest tests\\test_sample.py'
+          //  bat script: "pytest teststest_sample.py"
          }
       }
       stage('Stop test app') {
