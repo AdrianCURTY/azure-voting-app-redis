@@ -36,7 +36,7 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            bat 'Powershell.exe -Command "pytest tests/test_sample.py"'
+            bat 'pytest tests/test_sample.py'
           //  bat script: "pytest tests/test_sample.py"
          }
       }
