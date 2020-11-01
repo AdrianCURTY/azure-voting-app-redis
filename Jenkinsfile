@@ -40,6 +40,7 @@ pipeline {
             bat 'dir'
             bat """
             cd tests
+            dir
             py.test test_sample.py
             """
           //  bat script: "pytest teststest_sample.py"
