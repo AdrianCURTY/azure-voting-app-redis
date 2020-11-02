@@ -20,10 +20,10 @@ pipeline {
       }
       stage('Start test app') {
          steps {
-            pwsh(script: """
+            bat script: """
                docker-compose up -d
-               ./scripts/test_container.ps1
-            """)
+               Powershell.exe -executionpolicy remotesigned -File scripts/test_container.ps1
+            """
          }
          post {
             success {
