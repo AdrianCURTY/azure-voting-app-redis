@@ -36,12 +36,10 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            bat """
-            cd tests
-            pipenv install --skip-lock --verbose
-            pipenv run pip install pytest
-            pipenv run pytest
-            """
+            bat label: 'trying to run test', returnStatus: true, script: ''' cd tests
+pipenv install --skip-lock --verbose
+pipenv run pip install pytest
+ pipenv run pytest'''
           //  bat script: "pytest teststest_sample.py"
          }
       }
