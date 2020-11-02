@@ -38,7 +38,6 @@ pipeline {
          steps {
             bat """
             cd tests
-            set PIPENV_VENV_IN_PROJECT=true
             pipenv install --skip-lock
             pipenv shell /c pytest
             """
