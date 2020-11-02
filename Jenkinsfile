@@ -36,12 +36,10 @@ pipeline {
       }
       stage('Run Tests') {
          steps {
-            bat 'echo %PATH%'
-            bat 'dir'
             bat """
             cd tests
-            dir
-            py.test C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Voting_App_Pipeline_master\\tests\\test_sample.py
+            pipenv install pipenv install --skip-lock
+            pipenv shell /c pytest
             """
           //  bat script: "pytest teststest_sample.py"
          }
