@@ -39,7 +39,7 @@ pipeline {
             bat """
             cd tests
             set PIPENV_VENV_IN_PROJECT=true
-            pipenv install pipenv install --skip-lock
+            pipenv install --skip-lock
             pipenv shell /c pytest
             """
           //  bat script: "pytest teststest_sample.py"
