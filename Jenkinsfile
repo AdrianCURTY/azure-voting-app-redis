@@ -38,7 +38,7 @@ pipeline {
          steps {
             bat """
             cd tests
-            pipenv install --skip-lock
+            pipenv install --skip-lock --verbose
             pipenv shell /c pytest
             """
           //  bat script: "pytest teststest_sample.py"
