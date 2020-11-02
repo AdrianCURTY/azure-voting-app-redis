@@ -41,7 +41,7 @@ pipeline {
             bat """
             cd tests
             dir
-            py.test test_sample.py
+            py.test C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Voting_App_Pipeline_master\tests\test_sample.py
             """
           //  bat script: "pytest teststest_sample.py"
          }
