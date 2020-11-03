@@ -57,7 +57,7 @@ pipeline {
                script {
                   docker.withRegistry('http://index.docker.io/v1/','DockerHub'){
                      def image = docker.build('naidra/jenkins-course')
-                     image.push()
+                     image.push('1')
                   }
                }
             }
