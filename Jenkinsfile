@@ -50,6 +50,19 @@ pipeline {
             """
          }
       }
+      stage('Push Container'){
+         steps {
+            echo "WORKSPACE is $WORKSPACE"
+            dir("$WORKSPACE/azure-vote"){
+               script {
+                  docker.withRegistry('http://index.docker.io/v1/','DockerHub'){
+                     def image = docker.build('blackdentech/jenkins-course:latest')
+                     image.push()
+                  }
+               }
+            }
+         }
+      }
       //Powershell.exe -executionpolicy remotesigned -File  C:\Users\SE\Desktop\ps.ps1
    }
 
