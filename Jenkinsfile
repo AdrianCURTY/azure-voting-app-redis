@@ -50,18 +50,23 @@ pipeline {
             """
          }
       }
-      stage('Push Container'){
+       stage('Push Container'){
          steps {
             echo "WORKSPACE is $WORKSPACE"
             dir("$WORKSPACE/azure-vote"){
                script {
                   docker.withRegistry('http://index.docker.io/v1/','DockerHub'){
                      def image = docker.build('naidra/jenkins-course')
-                     image.push('1')
+                     //image.push('1')
                   }
                }
             }
          }
+      } 
+      stage('Run Anchor){
+            steps {
+               anchor name: 'naidra/jenkins-course'
+            }
       }
       //Powershell.exe -executionpolicy remotesigned -File  C:\Users\SE\Desktop\ps.ps1
    }
