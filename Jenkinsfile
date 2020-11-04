@@ -63,7 +63,7 @@ pipeline {
             }
          }
       } 
-      stage('Run Anchor){
+      stage('Run Anchor'){
             steps {
                anchor name: 'naidra/jenkins-course'
             }
