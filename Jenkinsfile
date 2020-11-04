@@ -65,7 +65,10 @@ pipeline {
       } 
       stage('Run Anchor'){
             steps {
-               anchore name: 'jenkins-course'
+               bat script: """
+               echo naidra/jenkins-course > anchor-images
+               """
+               anchore name: 'anchor-images'
             }
       }
       //Powershell.exe -executionpolicy remotesigned -File  C:\Users\SE\Desktop\ps.ps1
